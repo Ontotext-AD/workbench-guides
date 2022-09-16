@@ -1,0 +1,134 @@
+{
+    "guideName": {
+        "en": "The Star Wars guide (visual graph only)",
+        "fr": "⚒Le guide sur Star Wars (graphique visuel uniquement)"
+    },
+    "guideLevel": 2,
+    "guideOrder": 5,
+    "options": {
+        "repositoryIdBase": "starwars"
+    },
+    "steps": [
+        {
+            "guideBlockName": "visual-graph",
+            "options": {
+                "easyGraphInputText": "lu",
+                "iri": "https://swapi.co/resource/human/1",
+                "iriLabel": "Luke Skywalker"
+            }
+        },
+        {
+            "guideBlockName": "visual-graph-node-focus",
+            "options": {
+                "iri": "https://swapi.co/resource/human/1",
+                "iriLabel": "Luke Skywalker"
+            }
+        },
+        {
+            "guideBlockName": "visual-graph-link-focus",
+            "options": {
+                "fromIri": "https://swapi.co/resource/human/1",
+                "fromIriLabel": "Luke Skywalker",
+                "toIri": "https://swapi.co/vocabulary/Character",
+                "toIriLabel": "Character",
+                "iriLabel": "type",
+                "extraContent": {
+                    "en": "This tells us that one of the RDF types for <b>{{fromIriLabel}}</b> is <b>{{toIriLabel}}</b>.",
+                    "fr": "⚒Cela nous indique que l'un des types RDF pour <b>{{fromIriLabel}}</b> est <b>{{toIriLabel}}</b>."
+                }
+            }
+        },
+        {
+            "guideBlockName": "visual-graph-node-focus",
+            "options": {
+                "iri": "https://swapi.co/vocabulary/Mammal",
+                "iriLabel": "Mammal",
+                "content": "",
+                "extraContent": {
+                    "en": "<b>{{iriLabel}}</b> is another RDF type for <b>Luke Skywalker</b>.",
+                    "fr": "⚒<b>{{iriLabel}}</b> est un autre type RDF pour <b>Luke Skywalker</b>."
+                }
+            }
+        },
+        {
+            "guideBlockName": "visual-graph-link-focus",
+            "options": {
+                "fromIri": "https://swapi.co/resource/human/1",
+                "fromIriLabel": "Luke Skywalker",
+                "toIri": "https://swapi.co/resource/vehicle/14",
+                "toIriLabel": "Snowspeeder",
+                "iriLabel": "vehicle",
+                "content": "",
+                "extraContent": {
+                    "en": "This connection tells us that <b>{{fromIriLabel}}</b> has a <b>{{iriLabel}}</b> called <b>{{toIriLabel}}</b>. In addition, it shows the reverse relation <b>pilot</b>, which links <b>{{toIriLabel}}</b> to <b>{{fromIriLabel}}</b>.",
+                    "fr": "⚒Cette connexion nous indique que <b>{{fromIriLabel}}</b> a un <b>{{iriLabel}}</b> appelé <b>{{toIriLabel}}</b>. De plus, il montre la relation inverse <b>pilot</b>, qui relie <b>{{toIriLabel}}</b> à <b>{{fromIriLabel}}</b>."
+                }
+            }
+        },
+        {
+            "guideBlockName": "visual-graph-node-focus",
+            "options": {
+                "fromIriLabel": "Luke Skywalker",
+                "iri": "https://swapi.co/resource/vehicle/30",
+                "iriLabel": "Imperial Speeder Bike",
+                "content": "",
+                "extraContent": {
+                    "en": "<b>{{fromIriLabel}}</b> has another <b>vehicle</b> called <b>{{iriLabel}}</b>. Again, the reverse relation <b>pilot</b> links <b>{{iriLabel}}</b> to <b>{{fromIriLabel}}</b>.",
+                    "fr": "⚒<b>{{fromIriLabel}}</b> a un autre <b>vehicle</b> appelé <b>{{iriLabel}}</b>. Encore une fois, la relation inverse <b>pilot</b> relie <b>{{iriLabel}}</b> à <b>{{fromIriLabel}}</b>."
+                }
+            }
+        },
+        {
+            "guideBlockName": "visual-graph-properties",
+            "options": {
+                "iri": "https://swapi.co/resource/film/1",
+                "iriLabel": "A New Hope",
+                "focusProperties": [
+                    {
+                        "property": "types",
+                        "message": {
+                            "en": "We can see that <b>{{iriLabel}}</b> has a single type, <b>voc:Film</b>.",
+                            "fr": "⚒Nous pouvons voir que <b>{{iriLabel}}</b> a un seul type, <b>voc:Film</b>."
+                        }
+                    },
+                    "voc:episodeId",
+                    "voc:releaseDate"
+                ]
+            }
+        },
+        {
+            "guideBlockName": "visual-graph-expand",
+            "options": {
+                "iri": "https://swapi.co/resource/film/1",
+                "iriLabel": "A New Hope"
+            }
+        },
+        {
+            "guideBlockName": "visual-graph-node-focus",
+            "options": {
+                "iri": "https://swapi.co/resource/droid/1",
+                "iriLabel": "C-3PO",
+                "content": "",
+                "extraContent": {
+                    "en": "Node expansion enriches the graph by showing nodes connected to the expanded node, such as the character <b>{{iriLabel}}</b>.",
+                    "fr": "⚒L'expansion des nœuds enrichit le graphique en montrant les nœuds connectés au nœud étendu, comme le caractère <b>{{iriLabel}}</b>."
+                }
+            }
+        },
+        {
+            "guideBlockName": "visual-graph-node-focus",
+            "options": {
+                "iri": "https://swapi.co/resource/planet/1",
+                "iriLabel": "Tatooine",
+                "content": "",
+                "extraContent": {
+                    "en": "The planet <b>{{iriLabel}}</b>, which was already shown before expanding, is now linked to both <b>Luke Skywalker</b> and <b>A New Hope</b>.",
+                    "fr": "⚒La planète <b>{{iriLabel}}</b>, qui était déjà montrée avant de s'agrandir, est maintenant liée à la fois à <b>Luke Skywalker</b> et à <b>A New Hope</b>."
+                }
+            }
+        },
+        {
+            "guideBlockName": "guide-end"
+        }
+    ]
+}

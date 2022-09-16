@@ -1,0 +1,24 @@
+{
+    "guideName": {
+        "en": "The Star Wars guide (import only)",
+        "fr": "⚒Le guide sur Star Wars (import uniquement)"
+    },
+    "guideDescription": {
+        "en": "A basic guide showing repository creation, importing RDF from file, visual graph and some SPARQL queries.",
+        "fr": "⚒Un guide de base montrant la création de répertoire, l'importation de RDF à partir d'un fichier, un graphique visuel et certaines requêtes SPARQL."
+    },
+    "guideLevel": 0,
+    "guideOrder": 5,
+    "options": {
+        "repositoryIdBase": "starwars"
+    },
+    "steps": [
+        {
+            "guideBlockName": "import-rdf-file",
+            "options": {
+                "resourcePath": "starwars",
+                "resourceFile": "starwars.ttl"
+            }
+        }
+    ]
+}
