@@ -1,10 +1,10 @@
 {
     "guideName": {
-        "en": "The Star Wars guide (visual graph only)",
-        "fr": "⚒Le guide sur Star Wars (graphique visuel uniquement)"
+        "en": "[test] The Star Wars guide (visual graph only)",
+        "fr": "[test] ⚒Le guide sur Star Wars (graphique visuel uniquement)"
     },
-    "guideLevel": 2,
-    "guideOrder": 5,
+    "guideLevel": 1,
+    "guideOrder": 30,
     "options": {
         "repositoryIdBase": "starwars"
     },
@@ -106,7 +106,7 @@
         {
             "guideBlockName": "visual-graph-node-focus",
             "options": {
-                "iri": "https://swapi.co/resource/droid/1",
+                "iri": "https://swapi.co/resource/droid/2",
                 "iriLabel": "C-3PO",
                 "content": "",
                 "extraContent": {

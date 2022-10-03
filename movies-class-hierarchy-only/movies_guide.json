@@ -1,0 +1,45 @@
+{
+  "guideName": {
+    "en": "[test] The Movies database guide (class hierarchy only)"
+  },
+  "guideDescription": {
+    "en": "[test] A beginner's guide showing repository creation, importing RDF from a file, starting to explore data from the class hierarchy, some SPARQL queries and exloring RDF with the tabular view."
+  },
+  "guideLevel": 2,
+  "guideOrder": 100,
+  "options": {
+    "repositoryIdBase": "movies"
+  },
+  "steps": [
+    {
+      "guideBlockName": "class-hierarchy",
+      "options": {
+        "introExtraContent": {
+          "en": "In this dataset, there is a single top-level class, <b>schema:Movie</b>, and two subclasses (the smaller circles inside). This tells us that the dataset has to do with movies."
+        },
+        "zoomIris": [
+          {
+            "iri": "schema:Movie",
+            "postExtraContent": {
+              "en": "The two subclasses, <b>imdb:BlackandWhiteMovie</b> and <b>imdb:ColorMovie</b>, tell us that the movies are divided into black-and-white and color ones, and there are more color movies than black-and-white ones since the <b>imdb:ColorMovie</b> circle is larger."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "guideBlockName": "class-hierarchy-instances",
+      "options": {
+        "iri": "imdb:ColorMovie",
+        "focusInstances": [
+          "imdb:title/Superman",
+          "imdb:title/Mulan"
+        ],
+        "followCountLink": true
+      }
+    },
+    {
+      "guideBlockName": "guide-end"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "guideName": {
+    "en": "The Movies database guide"
+  },
+  "guideDescription": {
+    "en": "A beginner's guide showing repository creation, importing RDF from a file, starting to explore data from the class hierarchy, some SPARQL queries and exloring RDF with the tabular view."
+  },
+  "guideLevel": 0,
+  "guideOrder": 2,
+  "options": {
+    "repositoryIdBase": "movies"
+  },
+  "steps": [
+    {
+      "guideBlockName": "create-repository",
+      "options": {
+        "rulesetName": "RDFS-Plus (Optimized)"
+      }
+    },
+    {
+      "guideBlockName": "select-repository-dropdown"
+    },
+    {
+      "guideBlockName": "enable-autocomplete"
+    },
+    {
+      "guideBlockName": "import-rdf-file",
+      "options": {
+        "resourcePath": "movies",
+        "resourceFile": "movies.ttl"
+      }
+    },
+    {
+      "guideBlockName": "class-hierarchy",
+      "options": {
+        "introExtraContent": {
+          "en": "In this dataset, there is a single top-level class, <b>schema:Movie</b>, and two subclasses (the smaller circles inside). This tells us that the dataset has to do with movies."
+        },
+        "zoomIris": [
+          {
+            "iri": "schema:Movie",
+            "postExtraContent": {
+              "en": "The two subclasses, <b>imdb:BlackandWhiteMovie</b> and <b>imdb:ColorMovie</b>, tell us that the movies are divided into black-and-white and color ones, and there are more color movies than black-and-white ones since the <b>imdb:ColorMovie</b> circle is larger."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "guideBlockName": "class-hierarchy-instances",
+      "options": {
+        "iri": "imdb:ColorMovie",
+        "focusInstances": [
+          "imdb:title/Superman",
+          "imdb:title/Mulan"
+        ],
+        "followCountLink": true
+      }
+    },
+    {
+      "guideBlockName": "execute-sparql-query",
+      "options": {
+        "queries": [
+          {
+            "query": "PREFIX imdb: <http://academy.ontotext.com/imdb/>\nSELECT * {\n    imdb:title\\/PiratesoftheCaribbeanAtWorldsEnd ?p ?o .\n}\n",
+            "queryExtraContent": {
+              "en": "The query selects RDF statements whose <i>subject</i> is the movie <b>Pirates of the Caribbean At World's End</b> (identified by the IRI <b>imdb:title/PiratesoftheCaribbeanAtWorldsEnd</b>). Note that we need to escape the / in the shortened IRI."
+            },
+            "resultExtraContent": {
+              "en": "The variables <b>?p</b> and <b>?o</b> correspond to the <i>predicate</i> and <i>object</i> of the RDF statements. We can see that the director (via the predicate <b>schema:director</b>) is identified by the IRI <b>imdb:person/GoreVerbinski</b> (scroll down if necessary)"
+            }
+          },
+          {
+            "query": "PREFIX imdb: <http://academy.ontotext.com/imdb/>\nPREFIX schema: <http://schema.org/>\n\nSELECT * { \n    ?movie a imdb:ColorMovie ;\n           schema:name ?movieName ;\n           schema:commentCount ?commentCount .\n} ORDER BY DESC(?commentCount)\n",
+            "queryExtraContent": {
+              "en": "The query selects all color movies by class (<b>a</b> is a short-hand notation for <b>rdf:type</b>) and then performs two joins to fetch the movie's name (via the <b>schema:name</b> predicate), and the movie's number of comments (via the <b>schema:commentCount</b> predicate). Finally, the result must be ordered by the number of comments in descending order."
+            },
+            "resultExtraContent": {
+              "en": "The variables <b>?movie</b>, <b>?movieName</b> and <b>?commentCount</b> contain each movie's IRI, name and number of comments respectively. We can see that the movie with the most comments, <b>The Dark Knight Rises</b>, comes on top."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "guideBlockName": "table-graph-explore",
+      "options": {
+        "iri": "http://academy.ontotext.com/imdb/title/DjangoUnchained",
+        "iriLabel": "imdb:title/DjangoUnchained",
+        "subSteps": [
+          {
+            "type": "link",
+            "iri": "http://academy.ontotext.com/imdb/person/QuentinTarantino",
+            "iriLabel": "imdb:person/QuentinTarantino"
+          },
+          {
+            "type": "table",
+            "content": {
+              "en":"The table now shows RDF statements where <b>Quentin Tarantino</b> is in the subject position only."
+            }
+          },
+          {
+            "type": "role",
+            "role": "all",
+            "extraContent": {
+              "en": "In this way, we'll be able to see more statements related to <b>Quentin Tarantino</b>."
+            }
+          },
+          {
+            "type": "table",
+            "extraContent": {
+              "en": "The table now shows RDF statements where <b>Quentin Tarantino</b> is any position, such as <i>subject</i> or <i>object</i>."
+            }
+          },
+          {
+            "type": "visual",
+            "iri": "http://academy.ontotext.com/imdb/person/QuentinTarantino",
+            "iriLabel": "imdb:person/QuentinTarantino",
+            "extraContentVisualIntro": {
+              "en": "Let's go back to the table now &mdash; don't worry, the {{'visual.graph.label'|translate}} view is covered in more detail in the <b>Star Wars guide</b>."
+            }
+          },
+          {
+            "type": "row",
+            "row": 11,
+            "extraContent": {
+              "en": "Most RDF statements describe <b>Quentin Tarantino</b> as the director but he was the lead actor in <b>Reservoir Dogs</b>."
+            }
+          },
+          {
+            "type": "row",
+            "row": 12,
+            "content": {
+              "en": "If we look carefully, we'll notice that he was also the director of <b>Reservoir Dogs</b>."
+            },
+            "extraContent": {
+              "en": "Let's try to find all movies where the lead actor and the director are the same person with SPARQL."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "guideBlockName": "execute-sparql-query",
+      "options": {
+        "showIntro": false,
+        "queries": [
+          {
+            "query": "PREFIX schema: <http://schema.org/>\nPREFIX imdb: <http://academy.ontotext.com/imdb/>\n\nSELECT * { \n\t?movie schema:director ?person ;\n           imdb:leadActor ?person .\n} ORDER BY ?person\n",
+            "queryExtraContent": {
+              "en": "The query selects RDF statements that have the same <i>subject</i> (<b>?movie</b>) and the same <i>object</i> (<b>?person</b>). For any given movie and person, there must be RDF statements that link the movie and the person with both the <b>schema:director</b> and the <b>imdb:leadActor</b> <i>predicate</i>."
+            },
+            "resultExtraContent": {
+              "en": "The results show the movies and persons where the same person is both a leading actor and a director. The results are ordered by the person since we specified <b>ORDER BY ?person</b>. We can easily see that <b>Clint Eastwood</b> has made a lot of movies like that (scroll down if needed)."
+            }
+          },
+          {
+            "query": "PREFIX schema: <http://schema.org/>\nPREFIX imdb: <http://academy.ontotext.com/imdb/>\n\nSELECT ?person (COUNT(?movie) as ?numMovies) { \n\t?movie schema:director ?person ;\n           imdb:leadActor ?person .\n} GROUP BY ?person ORDER BY DESC(?numMovies)\n",
+            "queryExtraContent": {
+              "en": "Just like the previous query, we select movies and people that are both the leading actor and the director. In this query, we also use <b>GROUP BY ?person</b> to group the results by person and <b>COUNT(?movie)</b> to count how many movies per person satisfy the criteria. The count is returned in the <b>?numMovies</b> variable."
+            },
+            "resultExtraContent": {
+              "en": "Since we also used <b>ORDER BY DESC(?numMovies)</b> to order the results by movie count in descending order, we can easily see that both <b>Clint Eastwood</b> and <b>Woodie Allen</b> made 10 movies where they were the leading actor and the director."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "guideBlockName": "guide-end"
+    }
+  ]
+}
