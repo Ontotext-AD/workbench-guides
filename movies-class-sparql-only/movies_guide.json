@@ -114,7 +114,7 @@
               "en": "Just like the previous query, we select movies and people that are both the leading actor and the director. In this query, we also use <b>GROUP BY ?person</b> to group the results by person and <b>COUNT(?movie)</b> to count how many movies per person satisfy the criteria. The count is returned in the <b>?numMovies</b> variable."
             },
             "resultExtraContent": {
-              "en": "Since we also used <b>ORDER BY DESC(?numMovies)</b> to order the results by movie count in descending order, we can easily see that both <b>Clint Eastwood</b> and <b>Woodie Allen</b> made 10 movies where they were the leading actor and the director."
+              "en": "Since we also used <b>ORDER BY DESC(?numMovies)</b> to order the results by movie count in descending order, we can easily see that both <b>Clint Eastwood</b> and <b>Woody Allen</b> made 10 movies where they were the leading actor and the director."
             }
           }
         ]
