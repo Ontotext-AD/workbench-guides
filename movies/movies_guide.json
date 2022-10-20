@@ -3,7 +3,7 @@
     "en": "The Movies database guide"
   },
   "guideDescription": {
-    "en": "A beginner's guide showing repository creation, importing RDF from a file, starting to explore data from the class hierarchy, some SPARQL queries and exloring RDF with the tabular view."
+    "en": "The Movies database guide is a beginner's guide showing repository creation, importing RDF data from a file, starting to explore data from the class hierarchy, some SPARQL queries and exlporing RDF with the tabular view. It takes approximately 30 minutes to complete."
   },
   "guideLevel": 0,
   "guideOrder": 2,
@@ -12,10 +12,10 @@
   },
   "steps": [
     {
-      "guideBlockName": "create-repository",
-      "options": {
-        "rulesetName": "RDFS-Plus (Optimized)"
-      }
+      "guideBlockName": "welcome"
+    },
+    {
+      "guideBlockName": "create-repository"
     },
     {
       "guideBlockName": "select-repository-dropdown"
@@ -131,7 +131,7 @@
             "type": "row",
             "row": 12,
             "content": {
-              "en": "If we look carefully, we'll notice that he was also the director of <b>Reservoir Dogs</b>."
+              "en": "If we look carefully, we'll notice that he was not only the lead actor but also the director of <b>Reservoir Dogs</b>."
             },
             "extraContent": {
               "en": "Let's try to find all movies where the lead actor and the director are the same person with SPARQL."

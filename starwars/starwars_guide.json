@@ -4,7 +4,7 @@
         "fr": "⚒Le guide sur Star Wars"
     },
     "guideDescription": {
-        "en": "A beginner's guide showing repository creation, importing RDF from a file, starting to explore data from the visual graph, and executing SPARQL queries.",
+        "en": "The Star Wars guide is a beginner's guide showing repository creation, importing RDF data from a file, starting to explore data from the visual graph, and executing SPARQL queries. It takes approximately 30 minutes to complete.",
         "fr": "⚒Un guide de base montrant la création de répertoire, l'importation de RDF à partir d'un fichier, un graphique visuel et certaines requêtes SPARQL."
     },
     "guideLevel": 0,
@@ -14,10 +14,10 @@
     },
     "steps": [
         {
-            "guideBlockName": "create-repository",
-            "options": {
-                "rulesetName": "RDFS-Plus (Optimized)"
-            }
+            "guideBlockName": "welcome"
+        },
+        {
+            "guideBlockName": "create-repository"
         },
         {
             "guideBlockName": "select-repository-dropdown"
@@ -114,8 +114,19 @@
                             "fr": "⚒Nous pouvons voir que <b>{{iriLabel}}</b> a un seul type, <b>voc:Film</b>."
                         }
                     },
-                    "voc:episodeId",
-                    "voc:releaseDate"
+                    {
+                        "property": "voc:releaseDate",
+                        "message": {
+                            "en": "This shows the actual release date of <b>{{iriLabel}}</b>."
+                        }
+                    },
+                    {
+                        "property": "voc:episodeId",
+                        "skipGenericMessage": true,
+                        "message": {
+                            "en": "The property <b>voc:episodeId</b> tells us that <b>{{iriLabel}}</b> was envisioned as the 4th movie in the series, even though it was the first to be released in 1977."
+                        }
+                    }
                 ]
             }
         },
