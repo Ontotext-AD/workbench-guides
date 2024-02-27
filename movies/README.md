@@ -1,6 +1,6 @@
 # Welcome to The Movies database guide
 
-The Movies database guide is a beginner's guide showing repository creation, importing RDF data from a file, starting to explore data from the class hierarchy, some SPARQL queries and exlporing RDF with the tabular view. It takes approximately 30 minutes to complete.
+The Movies database guide is a beginner's guide showing repository creation, importing RDF data from a file, starting to explore data from the class hierarchy, some SPARQL queries and exploring RDF with the tabular view. It takes approximately 30 minutes to complete.
 
 This file describes the same steps as executing the visual guide. You can use it to execute some of the steps at your own pace.
 
@@ -127,7 +127,7 @@ SELECT * {
 } ORDER BY DESC(?commentCount)
 ```
 
-The query selects all color movies by class (**a** is a short-hand notation for **rdf:type**) and then performs two joins to fetch the movie's name (via the **schema:name** predicate), and the movie's number of comments (via the **schema:commentCount** predicate). Finally, the result must be ordered by the number of comments in descending order.
+The query selects all color movies by class (**a** is a shorthand notation for **rdf:type**) and then performs two joins to fetch the movie's name (via the **schema:name** predicate), and the movie's number of comments (via the **schema:commentCount** predicate). Finally, the result must be ordered by the number of comments in descending order.
 
 Click on the **Run** button.
 
@@ -157,7 +157,7 @@ The graph shows connections between the start node, **imdb:person/QuentinTaranti
 
 Let's go back to the table now -- don't worry, the Visual graph view is covered in more detail in the **Star Wars guide**.
 
-Most RDF statements describe **Quentin Tarantino** as the director but he was the lead actor in **Reservoir Dogs**.
+Most RDF statements describe **Quentin Tarantino** as the director, but he was the lead actor in **Reservoir Dogs**.
 
 If we look carefully, we'll notice that he was not only the lead actor but also the director of **Reservoir Dogs**.
 
