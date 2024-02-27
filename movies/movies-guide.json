@@ -4,7 +4,7 @@
     "fr": "Le guide de la base de données des films"
   },
   "guideDescription": {
-    "en": "The Movies database guide is a beginner's guide showing repository creation, importing RDF data from a file, starting to explore data from the class hierarchy, some SPARQL queries and exlporing RDF with the tabular view. It takes approximately 30 minutes to complete.",
+    "en": "The Movies database guide is a beginner's guide showing repository creation, importing RDF data from a file, starting to explore data from the class hierarchy, some SPARQL queries and exploring RDF with the tabular view. It takes approximately 30 minutes to complete.",
     "fr": "Le guide de la base de données des films est un guide pour débutant montrant la création d'un dépôt, l'importation de données RDF à partir d'un fichier, le début de l'exploration des données de la hiérarchie des classes, certaines requêtes SPARQL et l'exploration de RDF avec la vue tabulaire. Le guide prend environ 30 minutes à compléter."
   },
   "guideLevel": 0,
