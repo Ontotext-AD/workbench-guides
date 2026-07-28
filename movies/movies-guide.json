@@ -37,14 +37,15 @@
       "guideBlockName": "class-hierarchy",
       "options": {
         "introExtraContent": {
-          "en": "In this dataset, there is a single top-level class, <b>schema:Movie</b>, and two subclasses (the smaller circles inside). This tells us that the dataset has to do with movies."
+          "en": "In this dataset, there is a single top-level class, <b>schema:Movie</b>, and two subclasses (the smaller circles inside). This tells us that the dataset has to do with movies.",
+          "fr": "Dans cet ensemble de données, il y a une seule classe de niveau supérieur, <b>schema:Movie</b>, et deux sous-classes (les plus petits cercles à l'intérieur). Cela nous indique que l'ensemble de données concerne les films."
         },
         "zoomIris": [
           {
             "iri": "schema:Movie",
             "postExtraContent": {
               "en": "The two subclasses, <b>imdb:BlackandWhiteMovie</b> and <b>imdb:ColorMovie</b>, tell us that the movies are divided into black-and-white and color ones, and there are more color movies than black-and-white ones since the <b>imdb:ColorMovie</b> circle is larger.",
-              "fr": "Dans cet ensemble de données, il y a une seule classe de niveau supérieur, <b>schema:Movie</b>, et deux sous-classes (les plus petits cercles à l'intérieur). Cela nous indique que l'ensemble de données concerne les films."
+              "fr": "Les deux sous-classes, <b>imdb:BlackandWhiteMovie</b> et <b>imdb:ColorMovie</b>, nous indiquent que les films sont divisés en films en noir et blanc et en films en couleur, et qu'il y a plus de films en couleur que de films en noir et blanc, puisque le cercle <b>imdb:ColorMovie</b> est plus grand."
             }
           }
         ]
@@ -69,7 +70,7 @@
             "query": "PREFIX imdb: <http://academy.ontotext.com/imdb/>\nSELECT * {\n    imdb:title\\/PiratesoftheCaribbeanAtWorldsEnd ?p ?o .\n}\n",
             "queryExtraContent": {
               "en": "The query selects RDF statements whose <i>subject</i> is the movie <b>Pirates of the Caribbean At World's End</b> (identified by the IRI <b>imdb:title/PiratesoftheCaribbeanAtWorldsEnd</b>). Note that we need to escape the / in the shortened IRI.",
-              "fr": "La requête sélectionne les déclarations RDF dont le <i>sujet</i> est le film <b>Pirates of the Caribbean At World's End</b> (identifié par l'IRI <b>imdb:title/PiratesoftheCaribbeanAtWorldsEnd< /b>). Notez que nous devons échapper le / dans l'IRI raccourci."
+              "fr": "La requête sélectionne les déclarations RDF dont le <i>sujet</i> est le film <b>Pirates of the Caribbean At World's End</b> (identifié par l'IRI <b>imdb:title/PiratesoftheCaribbeanAtWorldsEnd</b>). Notez que nous devons échapper le / dans l'IRI raccourci."
             },
             "resultExtraContent": {
               "en": "The variables <b>?p</b> and <b>?o</b> correspond to the <i>predicate</i> and <i>object</i> of the RDF statements. We can see that the director (via the predicate <b>schema:director</b>) is identified by the IRI <b>imdb:person/GoreVerbinski</b> (scroll down if necessary).",
@@ -84,7 +85,7 @@
             },
             "resultExtraContent": {
               "en": "The variables <b>?movie</b>, <b>?movieName</b> and <b>?commentCount</b> contain each movie's IRI, name and number of comments respectively. We can see that the movie with the most comments, <b>The Dark Knight Rises</b>, comes on top.",
-              "fr": "Les variables <b>?movie</b>, <b>?movieName</b> et <b>?commentCount</b> contiennent respectivement l'IRI, le nom et le nombre de commentaires de chaque film. Nous pouvons voyez que le film avec le plus de commentaires, <b>The Dark Knight Rises</b>, arrive en tête."
+              "fr": "Les variables <b>?movie</b>, <b>?movieName</b> et <b>?commentCount</b> contiennent respectivement l'IRI, le nom et le nombre de commentaires de chaque film. Nous pouvons voir que le film avec le plus de commentaires, <b>The Dark Knight Rises</b>, arrive en tête."
             }
           }
         ]
@@ -128,8 +129,8 @@
             "iri": "http://academy.ontotext.com/imdb/person/QuentinTarantino",
             "iriLabel": "imdb:person/QuentinTarantino",
             "extraContentVisualIntro": {
-              "en": "Let's go back to the table now &mdash; don't worry, the {{'visual.graph.label'|translate}} view is covered in more detail in the <b>Star Wars guide</b>.",
-              "fr": "Revenons maintenant au tableau &mdash; ne vous inquiétez pas, la vue {{'visual.graph.label'|translate}} est couverte plus en détail dans le <b>guide Star Wars</b>."
+              "en": "Let's go back to the table now &mdash; don't worry, the Visual graph view is covered in more detail in the <b>Star Wars guide</b>.",
+              "fr": "Revenons maintenant au tableau &mdash; ne vous inquiétez pas, la vue Graphique visuel est couverte plus en détail dans le <b>guide Star Wars</b>."
             }
           },
           {
@@ -168,7 +169,7 @@
             },
             "resultExtraContent": {
               "en": "The results show the movies and persons where the same person is both a leading actor and a director. The results are ordered by the person since we specified <b>ORDER BY ?person</b>. We can easily see that <b>Clint Eastwood</b> has made a lot of movies like that (scroll down if needed).",
-              "fr": "Les résultats montrent les films et les personnes où la même personne est à la fois un acteur principal et un réalisateur. Les résultats sont triés par la personne puisque nous avons spécifié <b>ORDER BY ?person</b>. Nous pouvons facilement voyez que <b>Clint Eastwood</b> a fait beaucoup de films comme ça (faites défiler vers le bas si nécessaire)."
+              "fr": "Les résultats montrent les films et les personnes où la même personne est à la fois un acteur principal et un réalisateur. Les résultats sont triés par la personne puisque nous avons spécifié <b>ORDER BY ?person</b>. Nous pouvons facilement voir que <b>Clint Eastwood</b> a fait beaucoup de films comme ça (faites défiler vers le bas si nécessaire)."
             }
           },
           {
@@ -179,7 +180,7 @@
             },
             "resultExtraContent": {
               "en": "Since we also used <b>ORDER BY DESC(?numMovies)</b> to order the results by movie count in descending order, we can easily see that both <b>Clint Eastwood</b> and <b>Woody Allen</b> made 10 movies where they were the leading actor and the director.",
-              "fr": "Puisque nous avons également utilisé <b>ORDER BY DESC(?numMovies)</b> pour trier les résultats par nombre de films dans l'ordre décroissant, nous pouvons facilement voir que <b>Clint Eastwood</b> et <b>Woody Allen</b> a fait 10 films où ils étaient l'acteur principal et le réalisateur."
+              "fr": "Puisque nous avons également utilisé <b>ORDER BY DESC(?numMovies)</b> pour trier les résultats par nombre de films dans l'ordre décroissant, nous pouvons facilement voir que <b>Clint Eastwood</b> et <b>Woody Allen</b> ont fait 10 films où ils étaient l'acteur principal et le réalisateur."
             }
           }
         ]
